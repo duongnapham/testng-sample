@@ -36,14 +36,14 @@
     </target>
 
     <!-- ============ Compile ===========  -->
-    <target name="compile" depends="init,clean,classpath">
-        <mkdir dir="${test.dest}"/>
-        <mkdir dir="${test.dest}/classes"/>
-        <javac srcdir="src/main/java" destdir="${test.dest}/classes" classpathref="classpath" includeantruntime="false"/>
-    </target>
+    <!-- target name="compile" depends="init,clean,classpath" -->
+        <!-- mkdir dir="${test.dest}"/ -->
+        <!-- mkdir dir="${test.dest}/classes"/ -->
+        <!-- javac srcdir="src/main/java" destdir="${test.dest}/classes" classpathref="classpath" includeantruntime="false"/>
+    <!-- /target -->
 
     <!-- ============ Compile test  ===========  -->
-    <target name="compile-test" depends="compile">
+    <target name="compile-test" depends="init,clean,classpath">
         <mkdir dir="${test.dest}/test-classes"/>
         <javac srcdir="src/test/java" destdir="${test.dest}/test-classes" classpathref="classpath" includeantruntime="false"/>
     </target>
